@@ -8,11 +8,21 @@ function ibg() {
 }
 ibg();
 
-$('.icon-menu').click(function(event) {
-    $(this).toggleClass('active');
-    $('.menu__body').toggleClass('active');
-    $('body').toggleClass('lock');
-});
+// $('.icon-menu').click(function(event) {
+//     $(this).toggleClass('active');
+//     $('.menu__body').toggleClass('active');
+//     $('body').toggleClass('lock');
+// });
+
+const iconMenu = document.querySelector('.menu__icon');
+const menuBody = document.querySelector('.menu__body');
+if (iconMenu) {
+    iconMenu.addEventListener("click", function (e) {
+        document.body.classList.toggle('lock');
+        iconMenu.classList.toggle('active');
+        menuBody.classList.toggle('active');
+    });
+}
 
 //SLIDER
 if($('.slider__body').length>0){
@@ -33,3 +43,41 @@ if($('.slider__body').length>0){
         }]
     });
  }
+
+ const menuLinks = document.querySelectorAll('.menu__link[data-goto]'); 
+ if (menuLinks.length > 0) {
+    menuLinks.forEach(menuLink => {
+        menuLink.addEventListener("click", onMenuLinkClick);
+    });
+    function onMenuLinkClick(e) {
+        const menuLink = e.target;
+        if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+            const gotoBlock = document.querySelector(menuLink.dataset.goto);
+            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
+
+            if (iconMenu.classList.contains('active')) {
+                document.body.classList.remove('lock');
+                iconMenu.classList.remove('active');
+                menuBody.classList.remove('active');
+            }
+
+            window.scrollTo({
+                top: gotoBlockValue,
+                behavior: "smooth"
+            });
+            e.preventDefault();
+        }
+    }
+ }
+
+
+// const windowScrollTop;
+const btnUp = document.querySelector('.btn-up');
+window.addEventListener('scroll', function() {
+    const windowScrollTop = pageYOffset;
+    if (windowScrollTop > 575) {
+        btnUp.classList.add('active');
+    } else {
+        btnUp.classList.remove('active');
+    }
+});

@@ -788,3 +788,30 @@ body {
   font-style: italic;
   padding: 0 9px 0 0;
 }
+.btn-up {
+  visibility: hidden;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.btn-up.active {
+  visibility: visible;
+}
+.btn-up::after {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #333;
+  border-right: transparent;
+  border-bottom: transparent;
+  -webkit-transform: translate(50%, 75%) rotate(45deg);
+          transform: translate(50%, 75%) rotate(45deg);
+}
