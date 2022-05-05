@@ -646,5 +646,13 @@ body{
         border-right: transparent;
         border-bottom: transparent;
         transform: translate(50%, 75%) rotate(45deg);  
-    }    
+    }
+    @media (max-width: 750px) {
+        bottom: 30px;
+        right: 30px;
+    }
+    @media (max-width: 500px) {
+        bottom: 20px;
+        right: 20px;
+    } 
 }

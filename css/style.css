@@ -815,3 +815,15 @@ body {
   -webkit-transform: translate(50%, 75%) rotate(45deg);
           transform: translate(50%, 75%) rotate(45deg);
 }
+@media (max-width: 750px) {
+  .btn-up {
+    bottom: 30px;
+    right: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .btn-up {
+    bottom: 20px;
+    right: 20px;
+  }
+}
