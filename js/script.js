@@ -71,7 +71,7 @@ if($('.slider__body').length>0){
  }
 
 
-// const windowScrollTop;
+// Scroll up button
 const btnUp = document.querySelector('.btn-up');
 window.addEventListener('scroll', function() {
     const windowScrollTop = pageYOffset;
@@ -81,3 +81,11 @@ window.addEventListener('scroll', function() {
         btnUp.classList.remove('active');
     }
 });
+
+btnUp.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+    preventDefault();
+})
