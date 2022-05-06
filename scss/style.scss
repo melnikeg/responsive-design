@@ -654,5 +654,11 @@ body{
     @media (max-width: 500px) {
         bottom: 20px;
         right: 20px;
+        width: 65px;
+        height: 65px;
+        &::after{
+            width: 20px;
+            height: 20px;
+        }
     } 
 }

@@ -825,5 +825,11 @@ body {
   .btn-up {
     bottom: 20px;
     right: 20px;
+    width: 65px;
+    height: 65px;
+  }
+  .btn-up::after {
+    width: 20px;
+    height: 20px;
   }
 }
