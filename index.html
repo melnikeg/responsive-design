@@ -7,6 +7,7 @@
 		<meta charset="UTF-8">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>					
 		<script src="js/slick.min.js"></script>		
+		<script src="https://www.google.com/recaptcha/api.js"></script>
 	</head>	
 	<body>
 		<div class="wrapper">
@@ -261,6 +262,7 @@
 									<div class="subscribe__input">
 										<input autocomplete="off" type="text" name="form[]" placeholder="enter your email..." class="input">
 									</div>
+									<div class="g-recaptcha" data-sitekey="6Lf1AYooAAAAABrMNrDLtDvLCtJicEfDKiTj07jb"></div>
 									<div class="subscribe__button">
 										<button type="submit" class="subscribe__btn">GO</button>
 									</div>
@@ -307,5 +309,14 @@
 			<div class="btn-up"></div>
 		</div>
 		<script src="js/script.js"></script>
+		<script>
+		$('#form').submit(function(){
+			var response = grecaptcha.getResponse();
+			if(response.length == 0) {
+				// alert('Вы не прошли проверку CAPTCHA должным образом');
+				return false;
+			}
+		});
+		</script>
 	</body>
 </html>
