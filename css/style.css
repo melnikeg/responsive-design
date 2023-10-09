@@ -645,6 +645,14 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: column;
+}
+.form__wrap{
+display: flex;
+margin-bottom: 10px;
+}
+.g-recaptcha{
+  align-self: center;
 }
 .subscribe__input {
   -webkit-box-flex: 1;
