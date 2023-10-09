@@ -267,7 +267,12 @@
 											<button type="submit" class="subscribe__btn">GO</button>
 										</div>
 									</div>
-									<div class="g-recaptcha" data-sitekey="6Lf1AYooAAAAABrMNrDLtDvLCtJicEfDKiTj07jb"></div>									
+									<div class="form__required-fields">
+										<div class="g-recaptcha" data-sitekey="6Lf1AYooAAAAABrMNrDLtDvLCtJicEfDKiTj07jb"></div>
+										<div style="display:none" id="error-msg">
+	                                		<span>This is a required field.</span>
+	                            		</div>
+                            		</div>									
 								</form>
 							</div>
 						</div>
@@ -316,8 +321,14 @@
 			var response = grecaptcha.getResponse();
 			if(response.length == 0) {
 				// alert('Вы не прошли проверку CAPTCHA должным образом');
-				return false;
-			}
+				jQuery('#error-msg').css('display', 'block');
+             	jQuery('#error-msg').css('color', '#df280a');
+             	jQuery('#error-msg').css('font-size', 13);
+             	return false;
+        	}
+        	else {
+             	jQuery('#error-msg').css('display', 'none');
+        	}
 		});
 		</script>
 	</body>
