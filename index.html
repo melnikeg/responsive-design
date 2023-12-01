@@ -318,19 +318,19 @@
 		<script src="js/script.js"></script>
 		<script src="https://www.google.com/recaptcha/api.js"></script>
 		<script>
-		$('.subscribe__form').submit(function(){
-			var response = grecaptcha.getResponse();
-			if(response.length == 0) {
-				// alert('Вы не прошли проверку CAPTCHA должным образом');
-				jQuery('#error-msg').css('display', 'block');
-             	jQuery('#error-msg').css('color', '#df280a');
-             	jQuery('#error-msg').css('font-size', 13);
-             	return false;
-        	}
-        	else {
-             	jQuery('#error-msg').css('display', 'none');
-        	}
-		});
+		// $('.subscribe__form').submit(function(){
+		// 	var response = grecaptcha.getResponse();
+		// 	if(response.length == 0) {
+		// 		// alert('Вы не прошли проверку CAPTCHA должным образом');
+		// 		jQuery('#error-msg').css('display', 'block');
+        //      	jQuery('#error-msg').css('color', '#df280a');
+        //      	jQuery('#error-msg').css('font-size', 13);
+        //      	return false;
+        // 	}
+        // 	else {
+        //      	jQuery('#error-msg').css('display', 'none');
+        // 	}
+		// });
 		</script>
 	</body>
 </html>
